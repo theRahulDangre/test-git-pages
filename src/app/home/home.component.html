@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+
+      <!-- TITLE -->
+      <div
+        class="d-flex flex-column"
+      >
+        <h3
+          [style.backgroundColor]="title_background_color"
+          class="align-self-center"
+        >
+          Home Page
+        </h3>
+        <hr/>
+      </div>
+
+      <!-- WELCOME USER -->
+      <div>
+        Welcome, {{firstName!=null?firstName:'User'}}
+      </div>
+
+      <!-- LINKs -->
+      <br>
+      <ul class="list-group">
+        <li
+          class="list-group-item list-group-item-action"
+          [routerLink]="['admin']"
+          *ngIf="isUserLoggedIn && userOfAnyRole(['ADMIN'])"
+        >
+          Admin
+        </li>
+        <li
+          class="list-group-item list-group-item-action"
+          [routerLink]="['profile']"
+          *ngIf="isUserLoggedIn && userOfAnyRole(['USER'])"
+        >
+          Profile
+        </li>
+        <li
+          class="list-group-item list-group-item-action"
+          [routerLink]="['login']"
+          *ngIf="!isUserLoggedIn"
+        >
+          Login
+        </li>
+        <li
+          class="list-group-item list-group-item-action"
+          (click)="logoutUser()"
+          *ngIf="isUserLoggedIn"
+        >
+          Logout
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

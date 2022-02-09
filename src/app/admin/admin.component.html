@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+
+        <!-- TITLE -->
+        <div
+          class="d-flex flex-column"
+        >
+          <h3 class="align-self-center">Admin Panel</h3>
+          <hr/>
+        </div>
+        <br/>
+
+        <h3>Orders</h3>
+        <hr/>
+        <ul class="list-group">
+          <li
+            class="list-group-item list-group-item-action"
+            *ngFor="let order of allOrders"
+          >
+            {{order}}
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>

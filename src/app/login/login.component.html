@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center min-vh-100">
+    <div class="col-10 col-md-4 col-xl-4 align-self-center">
+
+      <div class="row border-bottom border-dark border-2">
+        <h3>Login</h3>
+      </div>
+      <br/>
+
+      <!-- LOGIN FORM-->
+      <form
+        class="row p-2 border border-dark border-2 rounded-3"
+        [formGroup]="loginForm"
+        (ngSubmit)="submit()"
+      >
+
+        <!-- Invalid Credentials Error -->
+        <div
+          class="col-12 mb-3 alert alert-danger text-center"
+          *ngIf="invalidLogin"
+        >
+          Invalid credentials
+        </div>
+
+        <!-- USERNAME -->
+        <div class="col-12 mb-3">
+          <label
+            for="id_username"
+            class="form-label"
+          >
+            Username
+          </label>
+          <input
+            id="id_username"
+            name="username"
+            type="text"
+            class="form-control"
+            formControlName="username"
+          />
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="col-12 mb-3">
+          <label
+            for="id_password"
+            class="form-label"
+          >
+            Password
+          </label>
+          <input
+            id="id_password"
+            name="password"
+            type="password"
+            class="form-control"
+            formControlName="password"
+          />
+        </div>
+
+        <div class="col-12 mb-3">
+          <button
+            class="btn btn-primary"
+            type="submit">
+            Login
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
